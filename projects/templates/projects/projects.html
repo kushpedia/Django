@@ -1,0 +1,38 @@
+
+{% extends 'main.html' %}
+{% block content%}
+
+<p>Hi {{name}} Welcome to Kushpedia Projects</p>
+
+<table border="5">
+    
+    <th>Project</th>
+    <th>Positive Votes</th>
+    <th>Votes</th>
+    <th>Created</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    {% for project in allproject %}
+    <tr>
+        
+        <td style="padding: 0.4rem;">{{project.title}}</td>
+        <td style="padding: 0.4rem;">{{project.vote_ratio}}%</td>
+        <td style="padding: 0.4rem;">{{project.vote_total}}</td>
+        <td style="padding: 0.4rem;">{{project.created}}</td>
+    
+        <td style="padding: 0.4rem;"><a href="{% url 'project' project.id %}">View</a></td>
+        <td style="padding: 0.4rem;"><a href="{% url 'update-project' project.id %}">Edit</a></td>
+        <td style="padding: 0.4rem;"><a href="{% url 'delete-project' project.id %}">Delete</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+<h1>All Projects Template</h1>
+
+<p> Welcome To Kushpedia</p>
+
+{% endblock content %}

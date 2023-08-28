@@ -1,0 +1,15 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Single Project Page</h1>
+
+<h2>Title: {{currentProject.title}}</h2>
+<p>Description: {{currentProject.description}}</p>
+<p>Total votes: {{currentProject.vote_total}}</p>
+<hr>
+{% for tag in currentProject.tags.all %}
+<span style="border: 1px solid rgb(57, 56, 56); margin: 0.2rem; padding: .1rem .3rem;">{{tag}}</span>
+{% endfor %}
+<hr>
+{% endblock content %}
