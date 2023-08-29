@@ -3,7 +3,7 @@
 
 {% block content %}
 <h1>Single Project Page</h1>
-
+<img class="project_image" src="{{ currentProject.featured_image.url }}" alt="">
 <h2>Title: {{currentProject.title}}</h2>
 <p>Description: {{currentProject.description}}</p>
 <p>Total votes: {{currentProject.vote_total}}</p>

@@ -1,0 +1,11 @@
+h1{
+    color: red;
+}
+p{
+    color: rgb(4, 240, 110);
+    font-size: 1.5rem;
+}
+
+.project_image{
+    max-width: 500px;
+}
