@@ -100,5 +100,6 @@ pre.codeblock {
 .grid > .column {
   color: var(--color-light);
   text-align: center;
+  
   background: var(--color-main);
 }
