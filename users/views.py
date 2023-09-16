@@ -4,13 +4,19 @@ from django.contrib.auth import login, authenticate, logout
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Q
 from django.contrib.auth.models import User
 from .forms import CustomUserCreationForm, ProfileForm, SkillForm
 
 # Create your views here.
 def profiles(request):
-    profiles = Profile.objects.all()
-    context = {'profiles':profiles}
+    search_querry = ''
+    if request.GET.get('search_querry'):
+        search_querry = request.GET.get('search_querry')
+
+
+    profiles = Profile.objects.filter(Q(name__icontains =search_querry)|Q(short_intro__icontains=search_querry))
+    context = {'profiles':profiles, 'search_querry':search_querry}
 
     return render(request, 'users/profiles.html', context)
 
@@ -157,7 +163,3 @@ def deleteSkill(request,pk):
     context= {'object': skill}
     return render(request, 'delete.html', context)
 
-@login_required(login_url="login")
-
-def newDef():
-    return None
