@@ -1,7 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
-# Create your models here.
+
+
+# # Sending email notifications on signals detection
+# import smtplib
+
+# EMAIL = "kushpedia2023py@gmail.com"
+# PASSWORD = "ywxbxtgtvdqxhxxg"
+# # smtp connection
+# conn = smtplib.SMTP("smtp@gmail.com")
+# conn.starttls
+# conn.login(user=EMAIL, password=PASSWORD)
+# # Create your models here.
 
 class Profile(models.Model):
     user  = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
@@ -37,5 +48,3 @@ class Skill(models.Model):
     def __str__(self):
         return str(self.name)
 
-
-    
