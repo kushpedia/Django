@@ -3,26 +3,6 @@
 {% block content%}
 
 
-<!-- <table border="5">
-
-    <th>Project</th>
-
-    <th></th>
-    <th></th>
-    <th></th>
-    {% for project in allproject %}
-    <tr>
-
-        <td style="padding: 0.4rem;">{{project.title}}</td>
-
-
-        <td style="padding: 0.4rem;"><a href="{% url 'project' project.id %}">View</a></td>
-        <td style="padding: 0.4rem;"><a href="{% url 'update-project' project.id %}">Edit</a></td>
-        <td style="padding: 0.4rem;"><a href="{% url 'delete-project' project.id %}">Delete</a></td>
-
-    </tr>
-    {% endfor %}
-</table> -->
 
 <!-- Main Section -->
 <main class="projects">
@@ -33,11 +13,11 @@
         </div>
 
         <div class="hero-section__search">
-        <form class="form" action="#" method="get">
+        <form class="form" id="searchForm" action="{% url 'projects' %}" method="get">
             <div class="form__field">
             <label for="formInput#search">Search By Projects </label>
-            <input class="input input--text" id="formInput#search" type="text" name="text"
-                placeholder="Search by Project Title" />
+            <input class="input input--text" id="formInput#search" type="text" name="search_querry"
+                placeholder="Search by Project Title" value="{{search_querry}}"/>
             </div>
 
             <input class="btn btn--sub btn--lg" type="submit" value="Search" />
@@ -81,11 +61,9 @@
         </div>
     </div>
     </section>
-
+    
+{% include 'pagination.html' with queryset=allproject custom_range=custom_range %}
 </main>
-
-
-
 
 
 
