@@ -204,8 +204,5 @@ def createMessage(request,pk):
             return redirect('user_profile', pk=recipient.id)
 
 
-
-
-
     context = {'recipient':recipient, 'form':form}
     return render(request, 'users/message_form.html', context)
