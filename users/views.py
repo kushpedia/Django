@@ -12,12 +12,12 @@ from .utils import searchProfiles, paginateProfiles
 
 # Create your views here.
 def profiles(request):
-    profiles, search_querry = searchProfiles(request)
+    profiles, search_query = searchProfiles(request)
 
-    custon_range, profiles = paginateProfiles(request,profiles,3)
+    custom_range, profiles = paginateProfiles(request,profiles,3)
 
 
-    context = {'profiles':profiles, 'search_querry':search_querry,'custom_range':custon_range }
+    context = {'profiles':profiles, 'search_querry':search_query,'custom_range':custom_range }
 
     return render(request, 'users/profiles.html', context)
 
