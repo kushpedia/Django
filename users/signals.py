@@ -16,16 +16,17 @@ def createProfile(sender, instance,created, **kwargs):
             email = user.email,
             name = user.first_name,
         )
-        subject = "Welcome Devsearch"
-        message = "You have Joined the best developers in the worlds. Create projects and connect with developers across the world"
+        subject = 'Welcome to DevSearch'
+        message = 'We are glad you are here!'
+
         send_mail(
             subject,
             message,
             settings.EMAIL_HOST_USER,
-            ['profile.email'],
-            fail_silently=False
-
+            [profile.email],
+            fail_silently=False,
         )
+        
         
 # delete user when a profile is deleted
 def deleteUser(sender, instance, **kwargs):
