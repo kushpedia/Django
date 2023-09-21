@@ -42,7 +42,6 @@ def updateUser(sender, instance, created,**kwargs):
         user.username = profile.user_name,
         user.email = profile.email,
     
-    
 
 post_save.connect(createProfile,sender=User)
 post_save.connect(updateUser, sender=Profile)

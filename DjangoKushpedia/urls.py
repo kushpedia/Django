@@ -11,6 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('projects/', include('projects.urls')),
     path('', include('users.urls')),
+    path('api/', include('api.urls')),
 
     path('rest_password/', auth_views.PasswordResetView.as_view(), name="password_reset"),
     path('rest_password_sent/', auth_views.PasswordChangeDoneView.as_view(), name="password_reset_done"),

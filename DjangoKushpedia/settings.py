@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -120,7 +121,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'kushpedia2023py@gmail.com'
-EMAIL_HOST_PASSWORD = 'ojkufogycnuoegoh'
+EMAIL_HOST_PASSWORD = 'hrtmvapdsjwfjvqd'
+
 
 
 # Static files (CSS, JavaScript, Images)
