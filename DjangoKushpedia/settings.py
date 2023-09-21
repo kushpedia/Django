@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -121,8 +124,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'kushpedia2023py@gmail.com'
-EMAIL_HOST_PASSWORD = 'hrtmvapdsjwfjvqd'
-
+EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
 
 
 # Static files (CSS, JavaScript, Images)
