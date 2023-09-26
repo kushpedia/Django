@@ -30,8 +30,11 @@ def createProfile(sender, instance,created, **kwargs):
         
 # delete user when a profile is deleted
 def deleteUser(sender, instance, **kwargs):
-    user = instance.user
-    user.delete()   
+    try:
+        user = instance.user
+        user.delete()   
+    except:
+        pass   
 
 # update user on saving the profile
 def updateUser(sender, instance, created,**kwargs):
