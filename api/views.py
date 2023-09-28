@@ -53,7 +53,7 @@ def projectVote(request,pk):
     serializer = ProjectSerializer(project, many=False)
     return Response(serializer.data)
 
-@api_view(['DELETE'])
+@api_view(['DELETE','GET'])
 def removeTag(request):
     tagId = request.data['tag']
     projectId = request.data['project']
