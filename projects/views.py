@@ -18,7 +18,6 @@ def projects(request):
 
     return render(request, 'projects/projects.html', context)
 
-
 def project(request, pk):
     form = ReviewForm()
     projectObject = Project.objects.get(id=pk)
